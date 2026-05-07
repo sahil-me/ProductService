@@ -21,13 +21,11 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public Product getProductById(@PathVariable("id") Long id){
-
         return productService.getSingleProduct(id);
     }
 
     @GetMapping()
     public List<Product> getAllProducts(){
-
         return productService.getAllProducts();
     }
 }
