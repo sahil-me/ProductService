@@ -1,7 +1,10 @@
 package com.ecommerce.productservice.controllers;
 
+import com.ecommerce.productservice.exceptions.ProductNotFoundException;
 import com.ecommerce.productservice.models.Product;
 import com.ecommerce.productservice.services.ProductService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,8 +20,16 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable("id") Long id) {
-        return productService.getSingleProduct(id);
+    public ResponseEntity<Product> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
+
+        Product product = productService.getSingleProduct(id);
+
+        ResponseEntity<Product> responseEntity = new ResponseEntity<>(
+                product,
+                HttpStatus.OK
+        );
+
+        return responseEntity;
     }
 
     @GetMapping()
