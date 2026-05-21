@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+
 public class DbProductService implements ProductService{
 
     @Override
@@ -15,6 +15,11 @@ public class DbProductService implements ProductService{
 
     @Override
     public List<Product> getAllProducts() {
+        return null;
+    }
+
+    @Override
+    public List<Product> getLimitedProducts(Integer num) {
         return null;
     }
 
