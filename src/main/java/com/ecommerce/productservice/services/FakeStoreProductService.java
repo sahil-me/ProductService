@@ -56,6 +56,11 @@ public class FakeStoreProductService implements ProductService {
     }
 
     @Override
+    public void deleteSingleProduct(Long product_id) {
+
+    }
+
+    @Override
     public List<Product> getLimitedProducts(Integer num) {
 
         FakeStoreProductDto[] fakeStoreProductDtos = restTemplate.getForObject("https://fakestoreapi.com/products?limit="+num,FakeStoreProductDto[].class);
