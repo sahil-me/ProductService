@@ -1,4 +1,4 @@
-package com.ecommerce.productservice.inheritanceTypes.singleTable;
+package com.ecommerce.productservice.experimentation.inheritanceTypes.singleTable;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;

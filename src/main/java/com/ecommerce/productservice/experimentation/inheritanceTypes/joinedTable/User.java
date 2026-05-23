@@ -1,4 +1,4 @@
-package com.ecommerce.productservice.inheritanceTypes.joinedTable;
+package com.ecommerce.productservice.experimentation.inheritanceTypes.joinedTable;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

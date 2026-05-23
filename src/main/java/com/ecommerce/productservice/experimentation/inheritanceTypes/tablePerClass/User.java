@@ -1,4 +1,4 @@
-package com.ecommerce.productservice.inheritanceTypes.tablePerClass;
+package com.ecommerce.productservice.experimentation.inheritanceTypes.tablePerClass;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -11,9 +11,10 @@ import lombok.Setter;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String email;
 
 }
+
