@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,15 +20,20 @@ public class ProductController {
         this.productService = productService;
     }
 
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Product> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
+//
+//        ResponseEntity<Product> responseEntity = new ResponseEntity<>(
+//                productService.getSingleProduct(id),
+//                HttpStatus.OK
+//        );
+//
+//        return responseEntity;
+//    }
+
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
-
-        ResponseEntity<Product> responseEntity = new ResponseEntity<>(
-                productService.getSingleProduct(id),
-                HttpStatus.OK
-        );
-
-        return responseEntity;
+    public Product getProductById(@PathVariable("id") Long id) {
+        return new Product();
     }
 
     @GetMapping()
