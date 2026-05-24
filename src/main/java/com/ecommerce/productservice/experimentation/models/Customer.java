@@ -1,4 +1,4 @@
-package com.ecommerce.productservice.models;
+package com.ecommerce.productservice.experimentation.models;
 
 import jakarta.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.ecommerce.productservice.models;
+package com.ecommerce.productservice.experimentation.models;
 
 import jakarta.persistence.*;
 
@@ -6,7 +6,9 @@ import jakarta.persistence.*;
 public class Order {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String product;
 
     @ManyToOne
