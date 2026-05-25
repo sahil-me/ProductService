@@ -18,25 +18,27 @@ public class ProductController {
 
     ProductService productService;
 
-    public ProductController(@Qualifier("dbProductService") ProductService productService) {
+//    public ProductController(@Qualifier("dbProductService") ProductService productService) {
+    public ProductController(@Qualifier("fakeStoreProductService") ProductService productService) {
+
         this.productService = productService;
     }
 
-//    @GetMapping("/{id}")
-//    public ResponseEntity<Product> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
-//
-//        ResponseEntity<Product> responseEntity = new ResponseEntity<>(
-//                productService.getSingleProduct(id),
-//                HttpStatus.OK
-//        );
-//
-//        return responseEntity;
-//    }
-
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable("id") Long id) {
-        return new Product();
+    public ResponseEntity<Product> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
+
+        ResponseEntity<Product> responseEntity = new ResponseEntity<>(
+                productService.getSingleProduct(id),
+                HttpStatus.OK
+        );
+
+        return responseEntity;
     }
+
+//    @GetMapping("/{id}")
+//    public Product getProductById(@PathVariable("id") Long id) {
+//        return new Product();
+//    }
 
 //    @GetMapping()
 //    public ResponseEntity<List<Product>> getAllProducts(){

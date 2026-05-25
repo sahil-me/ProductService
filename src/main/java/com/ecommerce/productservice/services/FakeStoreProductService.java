@@ -7,6 +7,7 @@ import com.ecommerce.productservice.models.Product;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -22,13 +23,26 @@ import java.util.List;
 public class FakeStoreProductService implements ProductService {
 
     RestTemplate restTemplate;
-    public FakeStoreProductService(RestTemplate restTemplate) {
+    RedisTemplate<String, Object> redisTemplate;
+
+    public FakeStoreProductService(RestTemplate restTemplate, RedisTemplate<String, Object> redisTemplate) {
+
         this.restTemplate = restTemplate;
+        this.redisTemplate = redisTemplate;
     }
 
     @Override
     public Product getSingleProduct(Long productId) throws ProductNotFoundException {
 
+        // Try to fetch the product from my redis db
+        Product product = (Product) redisTemplate.opsForHash().get("PRODUCTS", "PRODUCT_" + productId);
+
+        if(product != null){
+            // Cache HIT
+            return product;
+        }
+
+        // Cache MISS
         FakeStoreProductDto fakeStoreProductDto =
                 restTemplate.getForObject("https://fakestoreapi.com/products/" + productId,
                 FakeStoreProductDto.class);
@@ -39,7 +53,11 @@ public class FakeStoreProductService implements ProductService {
                     + productId + " does not exist");
         }
 
-        return convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
+        product = convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
+
+        redisTemplate.opsForHash().put("PRODUCTS", "PRODUCT_" + productId, product);
+
+        return product;
     }
 
 //    @Override
@@ -99,6 +117,7 @@ public class FakeStoreProductService implements ProductService {
     @Override
     public Product updateProduct(Long id, Product product) {
 
+        //PATCH
         RequestCallback requestCallback = restTemplate.httpEntityCallback(product, FakeStoreProductDto.class);
         HttpMessageConverterExtractor<FakeStoreProductDto> responseExtractor = new HttpMessageConverterExtractor(FakeStoreProductDto.class, restTemplate.getMessageConverters());
         FakeStoreProductDto fakeStoreProductDto = restTemplate.execute(
@@ -107,6 +126,8 @@ public class FakeStoreProductService implements ProductService {
                 requestCallback,
                 responseExtractor
         );
+
+//        FakeStoreProductDto fakeStoreProductDto = restTemplate.patchForObject("https://fakestoreapi.com/products" + id, product, FakeStoreProductDto.class);
 
         return convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
     }
@@ -123,6 +144,9 @@ public class FakeStoreProductService implements ProductService {
                 responseExtractor
         );
 
+//        restTemplate.put();
+//        FakeStoreProductDto fakeStoreProductDto = restTemplate.putForObject("https://fakestoreapi.com/products" + id, product, FakeStoreProductDto.class);
+
         return convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
     }
 
@@ -135,6 +159,14 @@ public class FakeStoreProductService implements ProductService {
 //                fakeStoreProductDto.getDescription()));
 //        product.setTitle(fakeStoreProductDto.getTitle());
 //        product.setPrice(fakeStoreProductDto.getPrice());
+
+        Category category = new Category();
+        category.setName(fakeStoreProductDto.getCategory());
+        category.setDescription(fakeStoreProductDto.getDescription());
+
+        product.setCategory(category);
+        product.setTitle(fakeStoreProductDto.getTitle());
+        product.setPrice(fakeStoreProductDto.getPrice());
 
         return product;
     }
