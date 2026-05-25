@@ -38,6 +38,16 @@ public class ProductController {
         return new Product();
     }
 
+//    @GetMapping()
+//    public ResponseEntity<List<Product>> getAllProducts(){
+//        ResponseEntity<List<Product>> responseEntity = new ResponseEntity<>(
+//                productService.getAllProducts(),
+//                HttpStatus.OK
+//        );
+//
+//        return responseEntity;
+//    }
+
     @GetMapping()
     public ResponseEntity<Page<Product>> getAllProducts(@RequestParam("pagenumber") int pageNumber,
                                                         @RequestParam("pageSize") int pageSize) {
