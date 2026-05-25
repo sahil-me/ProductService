@@ -4,6 +4,8 @@ import com.ecommerce.productservice.exceptions.ProductNotFoundException;
 import com.ecommerce.productservice.models.Product;
 import com.ecommerce.productservice.services.ProductService;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,9 +39,11 @@ public class ProductController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<Product>> getAllProducts(){
-        ResponseEntity<List<Product>> responseEntity = new ResponseEntity<>(
-                productService.getAllProducts(),
+    public ResponseEntity<Page<Product>> getAllProducts(@RequestParam("pagenumber") int pageNumber,
+                                                        @RequestParam("pageSize") int pageSize) {
+
+        ResponseEntity<Page<Product>> responseEntity = new ResponseEntity<>(
+                productService.getAllProducts(pageNumber, pageSize),
                 HttpStatus.OK
         );
 

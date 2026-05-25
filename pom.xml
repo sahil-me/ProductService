@@ -10,9 +10,9 @@
     </parent>
     <groupId>com.ecommerce</groupId>
     <artifactId>ProductService</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>ProductService</name>
-    <description>This is a Product Service from E-Commerce Backend</description>
+    <description>This is a Product Service from E-Commerce (Backend)!</description>
     <url/>
     <licenses>
         <license/>

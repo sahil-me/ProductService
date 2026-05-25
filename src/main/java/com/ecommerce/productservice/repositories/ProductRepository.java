@@ -2,6 +2,7 @@ package com.ecommerce.productservice.repositories;
 
 import com.ecommerce.productservice.models.Product;
 import com.ecommerce.productservice.projections.ProductWithIdAndTitle;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

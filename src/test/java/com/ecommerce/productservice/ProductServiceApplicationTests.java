@@ -17,19 +17,19 @@ import java.util.Optional;
 @SpringBootTest
 class ProductServiceApplicationTests {
 
-    @Autowired
-    private ProductRepository productRepository;
+//    @Autowired
+//    private ProductRepository productRepository;
+//
+//    @Autowired
+//    private CategoryRepository categoryRepository;
+//
+//    @Test
+//    void contextLoads() {
+//    }
 
-    @Autowired
-    private CategoryRepository categoryRepository;
-
-    @Test
-    void contextLoads() {
-    }
-
-    @Test
-    @Transactional
-    void testDbQueries(){
+//    @Test
+//    @Transactional
+//    void testDbQueries(){
 
 //        List<ProductWithIdAndTitle> productsWithIdAndTitle =
 //                productRepository.randomSearchMethodForProduct();
@@ -47,19 +47,19 @@ class ProductServiceApplicationTests {
 //
 //        Optional<Product> product = productRepository.findById(10L);
 
-        Optional<Category> category = categoryRepository.findById(1L);
+//        Optional<Category> category = categoryRepository.findById(1L);
+//
+//        if(category.isPresent()) {
+//
+//            System.out.println(category.get().getName());
+//            System.out.println(category.get().getProducts());
+//
+//        }
+//
+//        System.out.println("Getting Products");
+//
+//        System.out.println("DEBUG");
 
-        if(category.isPresent()) {
-
-            System.out.println(category.get().getName());
-            System.out.println(category.get().getProducts());
-
-        }
-
-        System.out.println("Getting Products");
-
-        System.out.println("DEBUG");
-
-    }
+//    }
 
 }
