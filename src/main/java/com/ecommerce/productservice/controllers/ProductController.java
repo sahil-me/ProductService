@@ -19,7 +19,8 @@ public class ProductController {
     ProductService productService;
 
 //    public ProductController(@Qualifier("dbProductService") ProductService productService) {
-    public ProductController(@Qualifier("fakeStoreProductService") ProductService productService) {
+//    public ProductController(@Qualifier("fakeStoreProductService") ProductService productService) {
+    public ProductController(ProductService productService) {
 
         this.productService = productService;
     }
@@ -27,8 +28,10 @@ public class ProductController {
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
 
+        Product product = productService.getSingleProduct(id);
+
         ResponseEntity<Product> responseEntity = new ResponseEntity<>(
-                productService.getSingleProduct(id),
+                product,
                 HttpStatus.OK
         );
 
