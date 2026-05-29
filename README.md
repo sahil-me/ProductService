@@ -8,8 +8,8 @@ https://github.com/user-attachments/assets/5f9e4d32-907c-4f56-b23b-6b336b9beb9e
 ---
 
 ## Table of Contents
-- [Introduction](##introduction)
-- [Project Structure](##project-structure)
+- [Introduction](#introduction)
+- [Project Structure](#project-structure)
 - [Tech Stack](#tech-stack)
 - [Product Requirements Document (PRD)](#product-requirements-document-prd)
   - [Functional Requirements](#functional-requirements)
@@ -173,14 +173,14 @@ The project demonstrates real-world backend engineering concepts including RESTf
 ## Contributing
 
 Contributions are welcome. Before submitting changes, please review:
-- Contributing.md
-- CODE_OF_CONDUCT.md
-- SECURITY.md
+- [Contributing Guide](./Contributing.md)
+- [Code of Conduct](./CODE_OF_CONDUCT.md)
+- [Security Policy](./.github/SECURITY.md)
 
 ---
 
 ## License
-This project is licensed under the Apache 2.0 License.
+This project is licensed under the [Apache 2.0 License](./LICENSE).
 
 ---
 
