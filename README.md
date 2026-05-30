@@ -1,7 +1,6 @@
-
 # 🛒 E-Commerce Platform 🛍
 
-https://github.com/user-attachments/assets/5f9e4d32-907c-4f56-b23b-6b336b9beb9e
+https://github.com/user-attachments/assets/1115117b-ce90-4996-8203-a71eeaa99474
 
 > 🎥 Product Service Demonstration!
 
