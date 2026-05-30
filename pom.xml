@@ -12,7 +12,7 @@
     <artifactId>ProductService</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <name>ProductService</name>
-    <description>This is a Product Service from E-Commerce (Backend)!</description>
+    <description>This is a Product Service from E-Commerce Platform!</description>
     <url/>
     <licenses>
         <license/>
@@ -68,8 +68,8 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
-<!--            <version>4.0.6</version>-->
-<!--            <scope>compile</scope>-->
+            <version>4.0.6</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

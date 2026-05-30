@@ -108,7 +108,17 @@ public class DbProductService implements ProductService {
     }
 
     @Override
-    public Product replaceProduct(Long id, Product product) {
-        return null;
+    public Product replaceProduct(Long id, Product product)
+            throws ProductNotFoundException {
+
+        productRepository.findById(id)
+                .orElseThrow(() ->
+                        new ProductNotFoundException(
+                                "Product with id " + id + " does not exist"));
+
+        product.setId(id);
+
+        return productRepository.save(product);
     }
+
 }
