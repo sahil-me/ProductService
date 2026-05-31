@@ -59,7 +59,7 @@ code.
 Once you've confirmed the bug hasn't already been reported, please include the following information in your issue so 
 we can quickly resolve it:
 
-* Your **OS type** and version, **Java** version, **Spring Boot** version, **database details**, and any relevant **dependency versions**.
+* Your **OS type** and version, **Java** version, **Spring Boot** version, **database** details, and any relevant **dependency versions**.
 * A short, self-contained, code snippet that allows us to reproduce the bug.
 * The *full* stack trace or error logs if an exception is raised.
 * Attach any other additional information, like screenshots, you think may help.
@@ -138,7 +138,7 @@ a Pull Request!
 
 **Product Service** is an open-source backend microservice project designed as part of the **E-Commerce Platform** ecosystem. Contributors interested in improving scalability, security, product management, inventory handling, caching, pagination, filtering, search optimization, testing, and backend architecture are always welcome.
 
-We are always happy to welcome motivated individuals who want to contribute as maintainers and help Product Service evolve into a 
+We are always happy to welcome motivated individuals who want to contribute as maintainers and help **Product Service** evolve into a 
 scalable and reliable backend product catalog microservice.
 
 If you are interested in contributing at a deeper level, feel free to reach out and collaborate with us.
