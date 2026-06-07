@@ -1,5 +1,17 @@
 # 🛒 E-Commerce Platform 🛍
 
+## Infrastructure
+
+[![Spring Cloud | Eureka Server](https://img.shields.io/badge/Spring%20Cloud-Eureka%20Server-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://github.com/sahil-me/ServiceDiscovery)
+[![Spring Cloud | API Gateway](https://img.shields.io/badge/Spring%20Cloud-API%20Gateway-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://github.com/sahil-me/ApiGateway)
+
+## Business Services
+
+[![Microservice | User Service](https://img.shields.io/badge/Microservice-User%20Service-007EC6?style=for-the-badge&labelColor=555555&logo=spring&logoColor=white)](https://github.com/sahil-me/UserService)
+[![Microservice | Product Service](https://img.shields.io/badge/Microservice-Product%20Service-007EC6?style=for-the-badge&labelColor=555555&logo=spring&logoColor=white)](https://github.com/sahil-me/ProductService)
+[![Microservice | Payment Service](https://img.shields.io/badge/Microservice-Payment%20Service-007EC6?style=for-the-badge&labelColor=555555&logo=spring&logoColor=white)](https://github.com/sahil-me/PaymentService)
+[![Microservice | Email Service](https://img.shields.io/badge/Microservice-Email%20Service-007EC6?style=for-the-badge&labelColor=555555&logo=spring&logoColor=white)](https://github.com/sahil-me/EmailService)
+
 https://github.com/user-attachments/assets/98d4aca9-11f5-4c16-b068-7e25ab371ca7
 
 > 🎥 Product Service Demonstration!
@@ -8,6 +20,7 @@ https://github.com/user-attachments/assets/98d4aca9-11f5-4c16-b068-7e25ab371ca7
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Architecture Diagram](#architecture-diagram)
 - [Project Structure](#project-structure)
 - [Tech Stack](#tech-stack)
 - [Product Requirements Document (PRD)](#product-requirements-document-prd)
@@ -43,6 +56,23 @@ https://github.com/user-attachments/assets/98d4aca9-11f5-4c16-b068-7e25ab371ca7
 A scalable and modular e-commerce platform built using a microservices architecture. The system is designed to handle core e-commerce functionalities such as product management, cart operations, order processing, payment integration, and user management through independently deployable backend services.
 
 The project demonstrates real-world backend engineering concepts including RESTful APIs, database design, asynchronous communication, scalability, service abstraction, caching, payment gateway integration, and microservices-based system design using Spring Boot and related technologies.
+
+---
+
+## Architecture Diagram
+
+    Client
+       │
+       ▼
+    API Gateway
+       │
+       ▼
+    Service Discovery
+       │
+       ├── User Service
+       ├── Product Service
+       ├── Payment Service
+       └── Email Service
 
 ---
 
