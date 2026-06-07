@@ -31,7 +31,7 @@ https://github.com/user-attachments/assets/98d4aca9-11f5-4c16-b068-7e25ab371ca7
     - [Part 1: Product Search](#part-1-product-search)
     - [Part 2: Add to Cart](#part-2-add-to-cart)
     - [Part 3: Checkout](#part-3-checkout)
-- [Learning Resources](#learning-resources)
+- [Resources](#resources)
 - [Contributing](#contributing)
 - [License](#license)
 - [Author](#author)
@@ -48,24 +48,34 @@ The project demonstrates real-world backend engineering concepts including RESTf
 
 ## Project Structure
 
-**
+    E-Commerce-Platform/
+    │
+    ├── ServiceDiscovery/   # Eureka Service Registry
+    ├── ApiGateway/         # API Gateway
+    ├── UserService/        # User Management
+    ├── ProductService/     # Product Catalog Management
+    ├── PaymentService/     # Payment Integration
+    └── EmailService/       # Email Notifications      
 
 ---
 
 ## Tech Stack
 
-| Technology      | Purpose                            |
-| --------------- | ---------------------------------- |
-| Java 17         | Programming Language               |
-| Spring Boot 4   | Backend Framework                  |
-| Spring Web MVC  | REST API Development               |
-| Spring Data JPA | ORM & Database Access              |
-| MySQL           | Relational Database                |
-| Redis           | Caching Layer                      |
-| Lombok          | Boilerplate Code Reduction         |
-| Maven           | Dependency Management & Build Tool |
-| JUnit 5         | Unit & Integration Testing         |
-| IntelliJ IDEA   | Development Environment            |
+  | Technology                         | Purpose                                  |
+  | ---------------------------------- | ---------------------------------------- |
+  | Java 17                            | Core Programming Language                |
+  | Spring Boot 3.4                    | Application Framework                    |
+  | Spring Web                         | RESTful API Development                  |
+  | Spring Data JPA                    | Database Persistence Layer               |
+  | MySQL                              | Primary Relational Database              |
+  | Redis                              | Distributed Caching                      |
+  | Spring Cloud Netflix Eureka Client | Service Discovery                        |
+  | Lombok                             | Boilerplate Code Reduction               |
+  | Maven                              | Build Automation & Dependency Management |
+  | JUnit 5                            | Testing Framework                        |
+  | Spring Boot DevTools               | Development & Hot Reload Support         |
+  | IntelliJ IDEA                      | Integrated Development Environment       |
+
 
 ---
 
@@ -146,7 +156,7 @@ The project demonstrates real-world backend engineering concepts including RESTf
 
 ---
 
-## Learning Resources
+## Resources
 
 [![Dependency Injection](https://img.shields.io/badge/Spring-Dependency%20Injection-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html)
 [![Spring Data JPA](https://img.shields.io/badge/Spring%20Data-JPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-data-jpa)
