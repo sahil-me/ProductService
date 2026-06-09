@@ -21,7 +21,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
      List<Product> findProductByTitleLike(String title);
 
 //     select * from products where title like 'iphone' LIMIT 5
-     List<Product> findProductByTitleLike(int top, String title);
+//     List<Product> findProductByTitleLike(int top, String title);
 
      List<Product> findByPriceBetween(Double p1, Double p2);
 
