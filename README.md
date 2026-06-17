@@ -61,18 +61,7 @@ The project demonstrates real-world backend engineering concepts including RESTf
 
 ## Architecture Diagram
 
-    Client
-       │
-       ▼
-    API Gateway
-       │
-       ▼
-    Service Discovery
-       │
-       ├── User Service
-       ├── Product Service
-       ├── Payment Service
-       └── Email Service
+<img width="637" height="777" alt="High-Level Architecture" src="https://github.com/user-attachments/assets/601be6e5-e445-44af-b47d-fc4a87b7237e" />
 
 ---
 
